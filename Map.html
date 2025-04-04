@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet.js Map - Bugallon, Pangasinan</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <style>
+        #map {
+            height: 500px; /* Adjust as needed */
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Map Container -->
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+        // Initialize the map at Bugallon, Pangasinan
+        var map = L.map('map').setView([15.9016, 120.2027], 13);  // [Latitude, Longitude], Zoom Level
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Add a marker at Bugallon, Pangasinan
+        L.marker([15.9016, 120.2027]).addTo(map)
+            .bindPopup('<b>Bugallon, Pangasinan</b><br><a href="https://maps.google.com/?q=Bugallon,Pangasinan,Philippines" target="_blank">View on Google Maps</a>')
+            .openPopup();
+    </script>
+
+</body>
+</html>
+
